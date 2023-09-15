@@ -9,28 +9,29 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bus.R;
 import com.example.bus.model.Recording;
 
 import org.jetbrains.annotations.NotNull;
-import com.example.bus.R;
+
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
 public class RecordingAdapter extends RecyclerView.Adapter<RecordingAdapter.PartViewHolder> {
 
     private final Context context;
     private final List<Recording> parts;
 
-    public RecordingAdapter(Context context, List<Recording> parts) {
-        this.context = context;
-        this.parts = parts;
-    }
 
 
     @NonNull
     @NotNull
     @Override
     public PartViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        View partItems = LayoutInflater.from(parent.getContext()).inflate(R.layout.part_item, parent, false);
+        View partItems = LayoutInflater.from(parent.getContext()).inflate(R.layout.recording_item, parent, false);
         return new PartViewHolder(partItems);
     }
 
